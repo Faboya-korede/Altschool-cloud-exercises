@@ -1,13 +1,2 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-        <div>rm command</div>
-        <img src="./" alt="">
-    </body>
-    </html>
+rm : a linux command used to delete a file 
+![Screenshot (20)](https://user-images.githubusercontent.com/106436258/188156010-babda4b3-5762-41aa-af96-02fb849231c1.png)
