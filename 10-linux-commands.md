@@ -33,3 +33,8 @@
        
 ![Screenshot (37)](https://user-images.githubusercontent.com/106436258/188320874-4ad74c34-492a-4c09-bf6a-52e470d8f34c.png)
 
+             Output of php -v command
+             
+![Screenshot (36)](https://user-images.githubusercontent.com/106436258/188320975-776fd0a5-c6e6-4fc4-b909-06365c3af0d7.png)
+
+
