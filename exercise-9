@@ -1,0 +1,45 @@
+---
+- name: setup web server
+  hosts: all
+  become: yes
+  become_method: sudo
+  become_user: root
+
+  tasks:
+  - name: update APT cache
+    apt:
+      update_cache=yes
+
+  - name: install apache server
+    apt:
+      name: apache2
+      state: present
+
+  - name: install php server
+    apt:
+      name: php
+      state: present
+
+  - name: add apache php liberary
+    command: apt install -y libapache2-mod-php
+
+  - name: remove index.html
+    file:
+     name: /var/www/html/index.html
+     state: absent
+
+
+  - name: host index.php file as main content
+    copy:
+     src: /home/vagrant/index.php
+     dest: /var/www/html/index.php
+
+
+  - name: start apache server
+    service:
+      name: apache2
+      state: started
+
+  - name: set timezone to africa/lagos
+    timezone:
+     name: Africa/Lagos
