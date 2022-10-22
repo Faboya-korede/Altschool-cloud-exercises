@@ -36,5 +36,9 @@
              Output of php -v command
              
 ![Screenshot (36)](https://user-images.githubusercontent.com/106436258/188320975-776fd0a5-c6e6-4fc4-b909-06365c3af0d7.png)
+ 
+       Output of the email sent
+ 
+![WhatsApp Image 2022-10-22 at 09 12 59](https://user-images.githubusercontent.com/106436258/197328624-5ade1f43-f882-47ce-971d-a3b2692a2355.jpg)
 
 
