@@ -41,4 +41,7 @@
  
 ![WhatsApp Image 2022-10-22 at 09 12 59](https://user-images.githubusercontent.com/106436258/197328624-5ade1f43-f882-47ce-971d-a3b2692a2355.jpg)
 
+     Screenshot of the rendered page(exercise 9)
+
+![Screenshot (59)](https://user-images.githubusercontent.com/106436258/197330129-63612b8d-9c01-4fda-9ec2-ad6891113c78.png)
 
