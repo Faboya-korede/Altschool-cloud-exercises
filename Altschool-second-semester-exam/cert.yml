@@ -1,0 +1,38 @@
+---
+- name: installing Tls/ssl
+  hosts: all
+
+  tasks:
+  - name: upgrade system
+    apt:
+      update_cache: yes
+
+  - name: Install Certbot's apache package
+    apt:
+     name: python3-certbot-apache
+     state: present
+
+
+  - name: Check if certificate already exists.
+    stat:
+      path: /etc/letsencrypt/live/www.korede.me/cert.pem
+    register: letsencrypt_cert
+    with_items: /etc/apache2/sites-available/laravel-realworld-example-app.conf
+
+
+  - name: stop service to allow cerbot generate a cert.
+    service:
+       name: apache2
+       state: stopped
+
+  - name: Generate new certificate if one doesn't exist.
+    shell: "certbot certonly --standalone --noninteractive --agree-tos --email faboyakorede@gmail.com -d www.korede.me"
+    with_items: "{{ letsencrypt_cert.results }}"
+    when: item.stat.exists == False
+
+
+  - name: Start services after cert has been generated.
+    service:
+      name: "{{ item }}"
+      state: started
+    with_items: apache2
