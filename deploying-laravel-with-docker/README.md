@@ -24,17 +24,17 @@ The next step is to set a permissions on the laravel-app project directory so th
 ## Step 2 Create a docker-compose file for Our Laravel-App Application
 Docker Compose simplifies the process of building and deploying an application. Once you have defined the configurations and services, you can easily deploy your application in any host machine that has Docker and Docker Compose installed without worrying about the application dependencies.
 
-##Step 3 create a Dockerfile
+## Step 3 create a Dockerfile
 Dockerfile includes instructions that Docker can use to build custom Docker images. It can also install the software required and configure the necessary settings for your application.
 
-##Step 4 Configure php
+## Step 4 Configure php
 In this step, we will configure the php service to process incoming requests from Nginx. You will create a laravel.ini file inside the php directory. This file will hold the PHP configurations. This is the file you had bind-mounted to /usr/local/etc/php/conf.d/laravel.ini in the container . The configurations in this file override the default php.ini file usually read by PHP when it starts. Enter the following command to create the php directory:
 `mkdir ~/laravel-web/php`
 `nano ~/laravel-web/php/laravel.ini`
 `upload_max_filesize=80M
 post_max_size=80M`
 
-##Step 5 Configure Nginx
+## Step 5 Configure Nginx
 In this step, we will configure Nginx to use the php service we defined earlier. It will use PHP-FPM as the FastCGI server to serve dynamic content. FastCGI server is a software that enables interactive programs to interface with a web server.
 `mkdir -p ~/laravel-web/nginx/conf.d`
 `nano ~/laravel-web/nginx/conf.d/app.conf`
@@ -59,7 +59,7 @@ try_files $uri $uri/ /index.php?$query_string;
     }
 }`
 
-##Step 6 Configure MySQL
+## Step 6 Configure MySQL
 `mkdir ~/laravel-web/mysql`
 `nano ~/laravel-web/mysql/my.cnf`
 ` 	
@@ -67,7 +67,7 @@ try_files $uri $uri/ /index.php?$query_string;
 general_log = 1
 general_log_file = /var/lib/mysql/general.log`
 
-##Step 7  Set Laravel Environment Variables
+## Step 7  Set Laravel Environment Variables
 `cp .env.example .env`
 `nano .env`
 `DB_HOST= is the db database container.
@@ -76,22 +76,22 @@ general_log_file = /var/lib/mysql/general.log`
  DB_PASSWORD= yor password
 DB_CONNECTION=mysql`
 
-##Step 8
+## Step 8
 Run
 `docker-compose build my app`
 
-##Step9
+## Step9
 Run
 `docker-compose up -d`
 
-##Step 10
+## Step 10
 Run
 `docker-compose exec app composer install`
 
-##Step 11
+## Step 11
 Run
 `docker-compose exec app php artisan key:generate`
 
-##Step 12
+## Step 12
 Run
 `docker-compose exec app php artisan migrate `
