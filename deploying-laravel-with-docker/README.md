@@ -44,6 +44,8 @@ In this step, we will configure Nginx to use the php service we defined earlier.
        nano ~/laravel-web/nginx/conf.d/app.conf
 
 ### Add the following configurations:
+
+
   server {
 listen 80;
     index index.php index.html;
