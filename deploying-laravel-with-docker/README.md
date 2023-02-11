@@ -46,7 +46,7 @@ In this step, we will configure Nginx to use the php service we defined earlier.
 ### Add the following configurations:
 
 
-  server {
+  `server {
 listen 80;
     index index.php index.html;
     error_log  /var/log/nginx/error.log;
@@ -65,7 +65,7 @@ location / {
 try_files $uri $uri/ /index.php?$query_string;
         gzip_static on;
   }
-}
+}`
 
 ## Step 6 Configure MySQL
     mkdir ~/laravel-web/mysql
